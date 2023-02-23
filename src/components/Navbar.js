@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from "../elements/Button";
 // import { BsCircle, BsCircleFill } from 'react-icons/bs';
 // import { HiMenu } from "react-icons/hi";
@@ -15,11 +15,15 @@ const Navbar =({children})=>{
         { id: 6, path: "/mypage", name: "마이페이지" },
         { id: 7, path: "/community", name: "채숲" }
     ]
-
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         setIsOpen(!isOpen);
     }
+
+    // useEffect(() => {
+    //     console.log(location);
+    // }, [location]);
 
     return (
         <Container>
@@ -42,7 +46,11 @@ const Navbar =({children})=>{
                     <Button text="로그인" width="100%" href="/sign-in"/>
                 </div>
             </Sidebar>
-            <Main>{children}</Main>
+            {location.pathname === '/' ?
+                <LandingMain>{children}</LandingMain>
+            :
+                <Main>{children}</Main> 
+            }
         </Container>
     )
 }
@@ -98,14 +106,18 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const Main = styled.main`
-    // min-width: 60rem;
+    padding: 10rem 3rem;
     height: auto;
     min-height: 100vh;
     margin-left: 35rem;
-    padding: 10rem 3rem;
 
     display: flex;
     justify-content: center;
+`;
+
+const LandingMain = styled(Main)`
+    padding: 0;
+    align-items: center;
 `;
 
 export default Navbar;
