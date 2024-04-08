@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, NavLink } from 'react-router-dom'
 import Button from '../elements/Button'
-import { TbSalad } from 'react-icons/tb'
-import { BiUserCircle } from 'react-icons/bi'
-import { AiOutlineMenu } from 'react-icons/ai'
 import { navItem } from '../utils/NavItem'
 
 const Navbar = ({ isOpen, setIsOpen }) => {
@@ -16,11 +13,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     <Container className={isOpen ? 'open' : 'close'}>
       <Logo className="logo">
         {isOpen ? (
-          <StyledLink to="/">
-            <TbSalad />
-          </StyledLink>
+          <StyledLink to="/">H</StyledLink>
         ) : (
-          <StyledLink to="/">Chaebbi</StyledLink>
+          <StyledLink to="/">Home</StyledLink>
         )}
       </Logo>
       <>
@@ -48,16 +43,13 @@ const Navbar = ({ isOpen, setIsOpen }) => {
       </>
       {/* 로그인 여부에 따라 로그인, 로그아웃 버튼이 보이도록 구현할 것 */}
       <div>
-        {isOpen ? (
-          <StyledLink to="/mypage">
-            <BiUserCircle />
-          </StyledLink>
+        {/* {isOpen ? (
+          <StyledLink to="/mypage">userpage</StyledLink>
         ) : (
-          <Button text="로그인" href="/sign-in" />
-        )}
-        <Toggle onClick={toggle}>
-          <AiOutlineMenu size="2.5rem" />
-        </Toggle>
+        <Button text="로그인" href="/sign-in" />
+        )} */}
+        <Button text="로그인" href="/sign-in" />
+        <Toggle onClick={toggle}>menu</Toggle>
       </div>
     </Container>
   )

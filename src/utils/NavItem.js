@@ -1,37 +1,24 @@
-import { MdOutlineFoodBank } from 'react-icons/md'
-import { RiThumbUpLine } from 'react-icons/ri'
-import { MdOutlineForest } from 'react-icons/md'
-import {
-  AiOutlineSearch,
-  AiOutlineFileImage,
-  AiOutlinePieChart,
-} from 'react-icons/ai'
-
 export const navItem = [
   {
     id: 1,
-    path: '/record-by-image',
-    name: '식단기록-이미지',
-    icon: <AiOutlineFileImage />,
+    path: '/page1',
+    name: '페이지1',
   },
   {
     id: 2,
-    path: '/record-by-keyword',
-    name: '식단기록-검색',
-    icon: <AiOutlineSearch />,
+    path: '/page2',
+    name: '페이지2',
   },
   {
     id: 3,
-    path: '/analyze-diet',
-    name: '식사패턴분석',
-    icon: <AiOutlinePieChart />,
+    path: '/page3',
+    name: '페이지3',
   },
-  { id: 4, path: '/recommend', name: '메뉴추천', icon: <RiThumbUpLine /> },
+  { id: 4, path: '/page4', name: '페이지4' },
   {
     id: 5,
-    path: '/search',
-    name: '음식점검색',
-    icon: <MdOutlineFoodBank />,
+    path: '/page5',
+    name: '페이지5',
   },
-  { id: 6, path: '/community', name: '채숲', icon: <MdOutlineForest /> },
+  { id: 6, path: '/admin', name: '관리자 페이지' },
 ]

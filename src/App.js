@@ -2,14 +2,14 @@ import { Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import Navbar from './components/Navbar'
-import RecordSearch from './pages/RecordSearch'
-import RecordImage from './pages/RecordImage'
-import RecommendFridge from './pages/RecommendFridge'
-import SearchRestaurant from './pages/SearchRestaurant'
-import AnalyzeDiet from './pages/AnalyzeDiet'
+import Page1 from './pages/Page1'
+import Page2 from './pages/Page2'
+import Page5 from './pages/Page5'
+import Page4 from './pages/Page4'
+import Page3 from './pages/Page3'
 import UserLogin from './pages/UserLogin'
 import UserRegister from './pages/UserRegister'
-import UserPage from './pages/UserPage'
+import AdminPage from './pages/AdminPage'
 import Landing from './pages/Landing'
 import NotFound from './pages/NotFound'
 
@@ -22,12 +22,12 @@ function App() {
       <PageContainer isOpen={!isOpen}>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/record-by-image" element={<RecordImage />} />
-          <Route path="/record-by-keyword" element={<RecordSearch />} />
-          <Route path="/analyze-diet" element={<AnalyzeDiet />} />
-          <Route path="/recommend" element={<RecommendFridge />} />
-          <Route path="/search" element={<SearchRestaurant />} />
-          <Route path="/mypage" element={<UserPage />}>
+          <Route path="/page1" element={<Page1 />} />
+          <Route path="/page2" element={<Page2 />} />
+          <Route path="/page3" element={<Page3 />} />
+          <Route path="/page4" element={<Page4 />} />
+          <Route path="/page5" element={<Page5 />} />
+          <Route path="/admin" element={<AdminPage />}>
             {/* <Route path="/user-record" element={<UserRecord />} />
             <Route path="" element={<UserInfo />} />
             <Route path="/user-bookmark" element={<UserBookmark />} /> */}
